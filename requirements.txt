@@ -1,0 +1,11 @@
+streamlit
+numpy
+pandas
+scikit-learn
+spacy
+pyspellchecker
+matplotlib
+seaborn
+joblib
+openpyxl
+en-core-web-sm
