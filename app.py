@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import spacy
 from spellchecker import SpellChecker
+from spacy.cli import download
 
 # --------------------------------------------------
 # Page config MUST be first Streamlit command
@@ -24,12 +25,13 @@ def load_nlp():
         return spacy.load("en_core_web_sm")
     except OSError:
         import subprocess 
-        subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"], check=True)
+        download("en_core_web_sm")
         return spacy.load("en_core_web_sm")
     
 
 nlp = load_nlp()
 spell = SpellChecker()
+
 
 # --------------------------------------------------
 # Spell correction
